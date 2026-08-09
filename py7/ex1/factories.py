@@ -1,9 +1,9 @@
-import ex0
+from ex0 import CreatureFactory
 from .cap_classes import Sproutling, Bloomelle, Shiftling, Morphagon
 import typing
 
 
-class HealingCreatureFactory(ex0.CreatureFactory):
+class HealingCreatureFactory(CreatureFactory):
     def create_base(self) -> typing.Any:
         return Sproutling()
 
@@ -11,7 +11,7 @@ class HealingCreatureFactory(ex0.CreatureFactory):
         return Bloomelle()
 
 
-class TransformCreatureFactory(ex0.CreatureFactory):
+class TransformCreatureFactory(CreatureFactory):
     def create_base(self) -> typing.Any:
         return Shiftling()
 
