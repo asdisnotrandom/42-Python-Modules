@@ -19,7 +19,7 @@ if __name__ == "__main__":
         print("Safe to install packages without affecting the global system")
         print()
         print("Package installation path:")
-        print(site.getsitepackages())
+        print(site.getsitepackages()[0])
     else:
         print("MATRIX STATUS: You're still plugged in")
         print()
