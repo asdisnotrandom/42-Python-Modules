@@ -18,7 +18,7 @@ if __name__ == "__main__":
         print("[KO] numpy - numpy could not be imported."
               " Use 'pip install numpy'")
     if util.find_spec("matplotlib") is not None:
-        import matplotlib
+        import matplotlib.pyplot as plt
         print(f"[OK] matplotlib ({metadata.version('matplotlib')}) - "
               f"Visualization ready")
     else:
@@ -26,6 +26,19 @@ if __name__ == "__main__":
               " Use 'pip install matplotlib'")
     print()
     print("Analyzing Matrix data...")
-    data_list = numpy.ndarray = numpy.random.rand(100, 10)
+    data_list: numpy.ndarray = numpy.random.randn(2, 500)
     print(f"Processing {len(data_list)} data points...")
-    proc_data: pandas.
+    proc_data: pandas.DataFrame = pandas.DataFrame(data_list,
+                                                   index=["Signal1", "Signal2"]
+                                                   )
+    cumsum_data: pandas.DataFrame = proc_data.cumsum(axis=1)
+    pic, axis = plt.subplots(2, 1)
+    axis[0].plot(
+        cumsum_data.loc["Signal1"],
+        color="blue"
+                )
+    axis[1].plot(
+            cumsum_data.loc["Signal2"],
+            color="red"
+                )
+    pic.savefig("hey.png")
